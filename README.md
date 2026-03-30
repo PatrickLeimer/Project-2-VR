@@ -5,3 +5,4 @@ Also, make sure to crreate a folder within the "Assets" folder named "AssetLibra
 https://assetstore.unity.com/packages/3d/vegetation/trees/japanese-garden-pack-179492
 https://assetstore.unity.com/packages/3d/vegetation/japanese-garden-2-free-327670
 https://assetstore.unity.com/packages/3d/characters/robots/robot-kyle-urp-4696
+To ensure pond work's properly follow Isa's instructions here: https://github.com/PatrickLeimer/Project-2-VR/pull/5
