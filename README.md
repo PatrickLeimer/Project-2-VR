@@ -10,8 +10,4 @@ Robot Kyle: https://assetstore.unity.com/packages/3d/characters/robots/robot-kyl
 
 Zen Garden Area: https://assetstore.unity.com/packages/3d/props/khs-donggung-304769
 
-Sky: https://assetstore.unity.com/packages/3d/environments/simple-sky-cartoon-assets-42373
-
-Mountains: https://assetstore.unity.com/packages/3d/environments/landscapes/winter-mountains-and-stamps-129245
-
 To ensure pond work's properly follow Isa's instructions here: https://github.com/PatrickLeimer/Project-2-VR/pull/5
