@@ -6,6 +6,9 @@ https://assetstore.unity.com/packages/3d/vegetation/trees/japanese-garden-pack-1
 https://assetstore.unity.com/packages/3d/vegetation/japanese-garden-2-free-327670
 https://assetstore.unity.com/packages/3d/characters/robots/robot-kyle-urp-4696
 
+fish: https://assetstore.unity.com/publishers/120703
+
+
 Audio Assets: https://assetstore.unity.com/packages/audio/ambient/nature/nature-essentials-208227
 
 To ensure pond work's properly follow Isa's instructions here: https://github.com/PatrickLeimer/Project-2-VR/pull/5
