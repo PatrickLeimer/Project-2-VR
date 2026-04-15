@@ -12,6 +12,8 @@ Zen Garden Area: https://assetstore.unity.com/packages/3d/props/khs-donggung-304
 
 Sound Effects: https://assetstore.unity.com/packages/audio/sound-fx/foley/footsteps-essentials-189879
 
+Fish: https://assetstore.unity.com/packages/3d/characters/animals/fish/low-poly-fish-339618
+
 To ensure pond work's properly follow Isa's instructions here: https://github.com/PatrickLeimer/Project-2-VR/pull/5
 
 To make gazebo, and sushi, tea cup set, and bench to work download the zip file and download the remaining assets via the links in the Unity Asset Store:
