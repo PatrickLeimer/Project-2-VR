@@ -576,31 +576,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5728447701691045846, guid: 2708955a94fd0834a855339834532648, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 122.23264
+      value: 83.937
       objectReference: {fileID: 0}
     - target: {fileID: 5728447701691045846, guid: 2708955a94fd0834a855339834532648, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.597947
+      value: 7.561
       objectReference: {fileID: 0}
     - target: {fileID: 5728447701691045846, guid: 2708955a94fd0834a855339834532648, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.052969
+      value: 133.527
       objectReference: {fileID: 0}
     - target: {fileID: 5728447701691045846, guid: 2708955a94fd0834a855339834532648, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.8990333
+      value: -0.34704033
       objectReference: {fileID: 0}
     - target: {fileID: 5728447701691045846, guid: 2708955a94fd0834a855339834532648, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.014788192
+      value: 0.0033023925
       objectReference: {fileID: 0}
     - target: {fileID: 5728447701691045846, guid: 2708955a94fd0834a855339834532648, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.43723068
+      value: 0.9378011
       objectReference: {fileID: 0}
     - target: {fileID: 5728447701691045846, guid: 2708955a94fd0834a855339834532648, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.018704066
+      value: 0.009013314
       objectReference: {fileID: 0}
     - target: {fileID: 5728447701691045846, guid: 2708955a94fd0834a855339834532648, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8507,6 +8507,32 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &158220475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2253908315600191707, guid: 0804f6682b91d8d4b8fbfd2282e6e101, type: 3}
+  m_PrefabInstance: {fileID: 501386803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &158220479
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158220475}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 744.5945, y: 141.2309, z: 634.62317}
+  m_Center: {x: 5.7432165, y: -9.856601, z: 115.56134}
 --- !u!1001 &159151713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18857,6 +18883,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
   m_PrefabInstance: {fileID: 414464553}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &414986090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8126819123069259310, guid: 0804f6682b91d8d4b8fbfd2282e6e101, type: 3}
+  m_PrefabInstance: {fileID: 501386803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &416893326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8706201591531581071, guid: 1122bf8a00b1f4d289dd9326d3bfd24f, type: 3}
@@ -22374,6 +22405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gazebo
       objectReference: {fileID: 0}
+    - target: {fileID: 8126819123069259310, guid: 0804f6682b91d8d4b8fbfd2282e6e101, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     - target: {fileID: 8197925379070824123, guid: 0804f6682b91d8d4b8fbfd2282e6e101, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -22470,13 +22505,40 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 6910139691762860577, guid: 0804f6682b91d8d4b8fbfd2282e6e101, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8126819123069259310, guid: 0804f6682b91d8d4b8fbfd2282e6e101, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 501386806}
+    - targetCorrespondingSourceObject: {fileID: 2253908315600191707, guid: 0804f6682b91d8d4b8fbfd2282e6e101, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 158220479}
   m_SourcePrefab: {fileID: 100100000, guid: 0804f6682b91d8d4b8fbfd2282e6e101, type: 3}
 --- !u!4 &501386804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8900118108611892372, guid: 0804f6682b91d8d4b8fbfd2282e6e101, type: 3}
   m_PrefabInstance: {fileID: 501386803}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &501386806
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414986090}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &501615133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23527,7 +23589,7 @@ GameObject:
   - component: {fileID: 527295208}
   m_Layer: 0
   m_Name: MainRiver
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23598,7 +23660,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05681564c9e95c24d828a6a2beb43a62, type: 2}
+  - {fileID: 2100000, guid: fbe443a065216444a997a7d157067456, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -31110,7 +31172,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05681564c9e95c24d828a6a2beb43a62, type: 2}
+  - {fileID: 2100000, guid: fbe443a065216444a997a7d157067456, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -55625,12 +55687,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9ea11a2d13d536e4e8441a0f5895995c, type: 3}
   terrainRun:
   - {fileID: 8300000, guid: 9e68ea1ebd76aa44c8cfa5beb9850830, type: 3}
-  bridgeWalk: []
-  bridgeRun: []
-  waterWalk: []
-  waterRun: []
-  woodWalk: []
-  woodRun: []
+  bridgeWalk:
+  - {fileID: 8300000, guid: 8e001351cd7065543a068386cde4c960, type: 3}
+  bridgeRun:
+  - {fileID: 8300000, guid: 505a015d5525e0442ae4a62d5bac304d, type: 3}
+  waterWalk:
+  - {fileID: 8300000, guid: adf4e7fa93007bd49937217a0922f285, type: 3}
+  waterRun:
+  - {fileID: 8300000, guid: 3529918bd1dd74644ba7748b90343695, type: 3}
+  woodWalk:
+  - {fileID: 8300000, guid: 8e001351cd7065543a068386cde4c960, type: 3}
+  woodRun:
+  - {fileID: 8300000, guid: 7ffe843b3b9c8d14792d912d39646105, type: 3}
   walkInterval: 0.5
   runInterval: 0.3
 --- !u!114 &1166518765
