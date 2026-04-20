@@ -6,6 +6,7 @@ public class ToolPickup : MonoBehaviour
     public Transform holdPosition;
     private bool isPickedUp = false;
     private bool playerInRange = false;
+    private Transform playerTransform;
     private Vector3 originalPosition;
     private Quaternion originalRotation;
 
@@ -19,12 +20,25 @@ public class ToolPickup : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E) && !isPickedUp)
         {
+            if (!IsClosestPickup()) return;
             PickUp();
         }
         else if (isPickedUp && Input.GetKeyDown(KeyCode.Q))
         {
             Drop();
         }
+    }
+
+    bool IsClosestPickup()
+    {
+        if (playerTransform == null) return true;
+        float myDist = Vector3.Distance(transform.position, playerTransform.position);
+        foreach (var other in FindObjectsOfType<ToolPickup>())
+        {
+            if (other == this || !other.playerInRange || other.isPickedUp) continue;
+            if (Vector3.Distance(other.transform.position, playerTransform.position) < myDist) return false;
+        }
+        return true;
     }
 
     void PickUp()
@@ -54,11 +68,17 @@ public class ToolPickup : MonoBehaviour
             rb.isKinematic = true; // keep kinematic so it doesn't fly
 
         FindObjectOfType<PlayerToolManager>().UnequipTool();
+
+        playerInRange = false;
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) playerInRange = true;
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = true;
+            playerTransform = other.transform;
+        }
     }
 
     void OnTriggerExit(Collider other)
