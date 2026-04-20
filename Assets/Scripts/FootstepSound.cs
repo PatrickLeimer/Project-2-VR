@@ -20,12 +20,16 @@ public class FootstepSound : MonoBehaviour
     public AudioClip[] waterWalk;
     public AudioClip[] waterRun;
 
+    [Header("Wood Sounds (Tagged 'Wood')")]  // ← Added
+    public AudioClip[] woodWalk;              // ← Added
+    public AudioClip[] woodRun;              // ← Added
+
     [Header("Timing")]
     public float walkInterval = 0.5f;
     public float runInterval = 0.3f;
 
     private float stepTimer;
-    private bool inWater = false; // ← Added
+    private bool inWater = false;
 
     void Update()
     {
@@ -51,19 +55,19 @@ public class FootstepSound : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other) // ← Added
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Water")) inWater = true;
     }
 
-    void OnTriggerExit(Collider other) // ← Added
+    void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Water")) inWater = false;
     }
 
     string GetSurfaceType()
     {
-        if (inWater) return "Water"; // ← Added, takes priority over raycast
+        if (inWater) return "Water";
 
         RaycastHit hit;
         Vector3 rayStart = transform.position + Vector3.up * 0.1f;
@@ -73,6 +77,7 @@ public class FootstepSound : MonoBehaviour
             if (hit.collider.CompareTag("Sand"))    return "Sand";
             if (hit.collider.CompareTag("Terrain")) return "Terrain";
             if (hit.collider.CompareTag("Bridge"))  return "Bridge";
+            if (hit.collider.CompareTag("Wood"))    return "Wood";  // ← Added
         }
         return "None";
     }
@@ -96,6 +101,10 @@ public class FootstepSound : MonoBehaviour
         else if (surface == "Water")
         {
             clips = isRunning ? waterRun : waterWalk;
+        }
+        else if (surface == "Wood")                   // ← Added
+        {
+            clips = isRunning ? woodRun : woodWalk;   // ← Added
         }
 
         if (clips == null || clips.Length == 0) return;

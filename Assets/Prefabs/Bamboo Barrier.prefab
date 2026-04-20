@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 358180574750910811}
   - component: {fileID: 5276080353872821421}
   m_Layer: 0
-  m_Name: Edited_Bamboo
+  m_Name: Bamboo Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

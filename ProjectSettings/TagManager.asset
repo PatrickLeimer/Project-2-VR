@@ -7,6 +7,9 @@ TagManager:
   - CinemachineTarget
   - Sand
   - Terrain
+  - Bridge
+  - Water
+  - Wood
   layers:
   - Default
   - TransparentFX
