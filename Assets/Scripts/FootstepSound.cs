@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class FootstepSound : MonoBehaviour
 {
     [Header("Audio Source")]
@@ -13,11 +12,24 @@ public class FootstepSound : MonoBehaviour
     public AudioClip[] terrainWalk;
     public AudioClip[] terrainRun;
 
+    [Header("Bridge Sounds (Tagged 'Bridge')")]
+    public AudioClip[] bridgeWalk;
+    public AudioClip[] bridgeRun;
+
+    [Header("Water Sounds (Tagged 'Water')")]
+    public AudioClip[] waterWalk;
+    public AudioClip[] waterRun;
+
+    [Header("Wood Sounds (Tagged 'Wood')")]  // ← Added
+    public AudioClip[] woodWalk;              // ← Added
+    public AudioClip[] woodRun;              // ← Added
+
     [Header("Timing")]
     public float walkInterval = 0.5f;
     public float runInterval = 0.3f;
 
     private float stepTimer;
+    private bool inWater = false;
 
     void Update()
     {
@@ -26,13 +38,10 @@ public class FootstepSound : MonoBehaviour
 
         if (isMoving)
         {
-            // Detect which surface is beneath KyleRobot
             string surface = GetSurfaceType();
-
             if (surface != "None")
             {
                 stepTimer -= Time.deltaTime;
-
                 if (stepTimer <= 0f)
                 {
                     PlayFootstep(surface, isRunning);
@@ -42,22 +51,34 @@ public class FootstepSound : MonoBehaviour
         }
         else
         {
-            stepTimer = 0f; // Reset so the next step is instant
+            stepTimer = 0f;
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Water")) inWater = true;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Water")) inWater = false;
     }
 
     string GetSurfaceType()
     {
+        if (inWater) return "Water";
+
         RaycastHit hit;
-        // Start ray slightly above pivot to avoid missing the floor
         Vector3 rayStart = transform.position + Vector3.up * 0.1f;
 
         if (Physics.Raycast(rayStart, Vector3.down, out hit, 1.0f))
         {
-            if (hit.collider.CompareTag("Sand")) return "Sand";
+            if (hit.collider.CompareTag("Sand"))    return "Sand";
             if (hit.collider.CompareTag("Terrain")) return "Terrain";
+            if (hit.collider.CompareTag("Bridge"))  return "Bridge";
+            if (hit.collider.CompareTag("Wood"))    return "Wood";  // ← Added
         }
-
         return "None";
     }
 
@@ -65,7 +86,6 @@ public class FootstepSound : MonoBehaviour
     {
         AudioClip[] clips = null;
 
-        // Pick the right array based on tag and speed
         if (surface == "Sand")
         {
             clips = isRunning ? sandRun : sandWalk;
@@ -74,12 +94,22 @@ public class FootstepSound : MonoBehaviour
         {
             clips = isRunning ? terrainRun : terrainWalk;
         }
+        else if (surface == "Bridge")
+        {
+            clips = isRunning ? bridgeRun : bridgeWalk;
+        }
+        else if (surface == "Water")
+        {
+            clips = isRunning ? waterRun : waterWalk;
+        }
+        else if (surface == "Wood")                   // ← Added
+        {
+            clips = isRunning ? woodRun : woodWalk;   // ← Added
+        }
 
         if (clips == null || clips.Length == 0) return;
 
-        // Pitch shift for variety
         audioSource.pitch = isRunning ? Random.Range(1.1f, 1.3f) : Random.Range(0.9f, 1.1f);
-        
         AudioClip clip = clips[Random.Range(0, clips.Length)];
         if (clip != null)
         {
